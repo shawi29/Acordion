@@ -1,0 +1,105 @@
+body{
+	background-image: url("../images/bg.jpg");
+}
+
+.image-accordion{
+	width: 730px;
+	border: 6px solid #fff;
+	margin: 50px auto;
+	overflow: hidden;
+}
+
+.image-accordion div.block{
+	position: absolute;
+	top: 0;
+	left: 50px;
+	width: 380px;
+	transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+}
+
+.image-accordion > div.block{
+	position: relative;
+	left: 0;
+}
+
+.image-accordion img{
+	display: block;
+	width: 100%;
+}
+
+.image-accordion input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 100%;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	opacity: 0;
+	z-index: 100;
+}
+
+.image-accordion input:checked ~ div.block {
+	-webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -ms-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+	left: 380px;
+}
+
+.image-accordion input:checked + figcaption,
+.image-accordion input:checked:hover + figcaption{
+	background: rgba(87, 73, 81, 0);
+}
+
+.image-accordion input:hover + figcaption {
+	background: rgba(87, 73, 81, 0.03);
+}
+
+.image-accordion figcaption {
+	width: 100%;
+	height: 100%;
+	background: rgba(87, 73, 81, 0.1);
+	position: absolute;
+	top: 0px;
+	-webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.image-accordion figcaption span {
+	position: absolute;
+	top: 40%;
+	margin-top: -30px;
+	right: 20px;
+	left: 20px;
+	overflow: hidden;
+	text-align: center;
+	background: rgba(87, 73, 81, 0.3);
+	font-size: 1.2em;
+    opacity: 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 800;
+	padding: 5%;
+	color: #fff;
+} 
+
+.image-accordion input:checked + figcaption span {
+	-webkit-transition: all 0.4s ease-in-out 0.5s;
+    -moz-transition: all 0.4s ease-in-out 0.5s;
+    -o-transition: all 0.4s ease-in-out 0.5s;
+    -ms-transition: all 0.4s ease-in-out 0.5s;
+    transition: all 0.4s ease-in-out 0.5s;
+	opacity: 1;
+	
+	top: 50%;
+}
